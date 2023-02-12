@@ -46,32 +46,17 @@ export default function Home() {
   };
   return (
     <>
+      <div class="front-matter">
       <h1 className="title">{hello}!</h1>
-      {/* When the user hovers over the image we apply the wiggle style to it */}
-      <animated.div onMouseEnter={trigger} style={style}>
-        <img
-          src="img/designer.gif?v=1618196579405"
-          className="illustration"
-          onClick={handleChangeHello}
-          alt="Welcome to SEA: The Essay"
-        />
-      </animated.div>
       <div className="navigation">
-        {/* When the user hovers over this text, we apply the wiggle function to the image style */}
-        <animated.div onMouseEnter={trigger}>
-          <a className="btn--click-me" onClick={handleChangeHello}>
-            Psst, click me
-          </a>
-        </animated.div>
       </div>
       <div className="instructions">
-        <h2>Using this project</h2>
+        <h2>Getting started</h2>
         <p>
-          This is the Glitch <strong>Hello React</strong> project. You can use
-          it to build your own app. See more info in the{" "}
-          <Link href="/about">About</Link> page, and check out README.md in the
-          editor for additional detail plus next steps you can take!
+          You can submit an essay <Link href="/essay">here</Link> and take a look at the results.
+          We hope you have a great time getting better at your compositions!
         </p>
+      </div>
       </div>
     </>
   );
