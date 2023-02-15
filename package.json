@@ -1,19 +1,20 @@
 {
-  "name": "glitch-hello-react",
+  "name": "sea-the-essay",
   "version": "0.0.5",
-  "description": "A simple React single page app, built with Vite and React.",
+  "description": "App for SEA students to write better essays.",
   "scripts": {
     "start": "vite",
     "build": "vite build",
     "serve": "vite preview"
   },
   "dependencies": {
+    "axios": "*",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-spring": "^9.6.1",
-    "wouter": "^2.9.2",
+    "wouter": "^2.10.0",
     "react-helmet-async": "^1.3.0",
-    "@vitejs/plugin-react": "^3.0.1"
+    "@vitejs/plugin-react": "^3.1.0"
   },
   "devDependencies": {
     "vite": "^4.0.0"
@@ -26,7 +27,7 @@
     "node": "14.x"
   },
   "repository": {
-    "url": "https://glitch.com/edit/#!/glitch-hello-react"
+    "url": "https://github.com/irwinwilliams/sea-the-essay"
   },
   "glitch": {
     "projectType": "generated_static"

@@ -1,11 +1,3 @@
-/******************************************************************************
-START Glitch hello-app default styles
-
-The styles in this section do some minimal CSS resets, set default fonts and 
-colors, and handle the layout for our footer and "Remix on Glitch" button. If
-you're new to CSS they may seem a little complicated, but you can scroll down
-to this section's matching END comment to see page-specific styles.
-******************************************************************************/
 /* Our default values set as CSS variables */
 :root {
   --color-bg: #FFFFA0;
@@ -38,38 +30,13 @@ to this section's matching END comment to see page-specific styles.
     format("opentype");
 }
 
-/* Our remix on glitch button */
-.btn--remix {
-  font-family: HK Grotesk;
-  padding: 0.75rem 1rem;
-  font-size: 1.1rem;
-  line-height: 1rem;
-  font-weight: 500;
-  height: 2.75rem;
-  align-items: center;
-  cursor: pointer;
-  background: #FFFFFF;
-  border: 1px solid #000000;
-  box-sizing: border-box;
-  border-radius: 4px;
-  text-decoration: none;
-  color: #000;
-  white-space: nowrap;
-  margin-left: auto;
-}
-.btn--remix img {
-  margin-right: 0.5rem;
-}
-.btn--remix:hover {
-  background-color: #D0FFF1;
-}
 
 /* Navigation grid */
 .footer {
   display: flex;
   justify-content: space-between;
   margin: 1rem auto 0;
-  padding: 1rem 0 0.75rem 0;
+  padding: 1rem 0 0.05rem 0;
   width: 100%;
   flex-wrap: wrap;
   border-top: 4px solid #fff;
@@ -104,7 +71,7 @@ END Glitch hello-app default styles
 /* Page structure */
 body {
   font-family: HK Grotesk;
-  background-color: var(--color-bg);
+  
 }
 .wrapper {
   min-height: var(--wrapper-height);
@@ -120,9 +87,9 @@ body {
   justify-content: center;
 }
 
-/* Page titles */
+/*
 h1 {
-  color: #2800FF;
+  color: lightgray;
   font-family: HK Grotesk;
   font-style: normal;
   font-weight: bold;
@@ -138,12 +105,13 @@ h1 {
 }
 
 .page a {
-  color: #000;
+  color: white;
 }
 
 .page a:hover {
   text-decoration: none;
 }
+*/
 
 /* The React image and "click me" text */
 .btn--click-me {
@@ -169,7 +137,99 @@ h1 {
 }
 .instructions p {
   font-size: 1rem;
+  background-color:black;
+  opacity:0.8;
+}
+
+.instructions a
+{
+  color:pink;
+  font-weight:bold;
+  text-decoration:none;
 }
 h2 {
-  color: #2800FF;
+  color: white;
+}
+
+.bg {
+  /* The image used */
+  background-image: url("/images/designer.png");
+
+  /* Full height */
+  height: 100%;
+
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.front-matter {
+  display: flex;
+  flex-direction: row;
+  height: 100%;
+}
+
+.left-column {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 40vw;
+  height: 100vh;
+  background-color: #975E40;
+  color:#E1E1CD;
+  padding: 20px;
+}
+
+
+.right-column {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 58vw;
+  height: 100vh;
+}
+
+.left-column h2 {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-top: 0;
+}
+
+.left-column h1 {
+  font-size: 3rem;
+  font-weight: bold;
+  margin-top: 20px;
+}
+
+
+.upper-right-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  height:50%;
+  background-color:#AECACE
+}
+
+.upper-right-section p {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin: 0;
+}
+
+.upper-right-section button {
+  font-size: 3rem;
+  font-weight: bold;
+  background-color: transparent;
+  border: none;
+  margin-top: 10px;
+  cursor: pointer;
+}
+
+.lower-right-section {
+  height: 100%;
+  background-image: url("your-image-url-here");
+  background-size: cover;
 }
