@@ -233,3 +233,21 @@ h2 {
   background-image: url("your-image-url-here");
   background-size: cover;
 }
+
+.bg {
+  /* The image used */
+  background-image: url("/images/designer.png");
+
+  /* Full height */
+  height: 100%;
+
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.front-matter
+{
+  color:white;
+}
