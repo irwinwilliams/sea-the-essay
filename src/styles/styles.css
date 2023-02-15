@@ -71,7 +71,7 @@ END Glitch hello-app default styles
 /* Page structure */
 body {
   font-family: HK Grotesk;
-  background-color: var(--color-bg);
+  
 }
 .wrapper {
   min-height: var(--wrapper-height);
@@ -87,7 +87,7 @@ body {
   justify-content: center;
 }
 
-/* Page titles */
+/*
 h1 {
   color: lightgray;
   font-family: HK Grotesk;
@@ -111,6 +111,7 @@ h1 {
 .page a:hover {
   text-decoration: none;
 }
+*/
 
 /* The React image and "click me" text */
 .btn--click-me {
@@ -136,9 +137,101 @@ h1 {
 }
 .instructions p {
   font-size: 1rem;
+  background-color:black;
+  opacity:0.8;
+}
+
+.instructions a
+{
+  color:pink;
+  font-weight:bold;
+  text-decoration:none;
 }
 h2 {
-  color: #2800FF;
+  color: white;
+}
+
+.bg {
+  /* The image used */
+  background-image: url("/images/designer.png");
+
+  /* Full height */
+  height: 100%;
+
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.front-matter {
+  display: flex;
+  flex-direction: row;
+  height: 100%;
+}
+
+.left-column {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 40vw;
+  height: 100vh;
+  background-color: #975E40;
+  color:#E1E1CD;
+  padding: 20px;
+}
+
+
+.right-column {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 58vw;
+  height: 100vh;
+}
+
+.left-column h2 {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-top: 0;
+}
+
+.left-column h1 {
+  font-size: 3rem;
+  font-weight: bold;
+  margin-top: 20px;
+}
+
+
+.upper-right-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  height:50%;
+  background-color:#AECACE
+}
+
+.upper-right-section p {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin: 0;
+}
+
+.upper-right-section button {
+  font-size: 3rem;
+  font-weight: bold;
+  background-color: transparent;
+  border: none;
+  margin-top: 10px;
+  cursor: pointer;
+}
+
+.lower-right-section {
+  height: 100%;
+  background-image: url("your-image-url-here");
+  background-size: cover;
 }
 
 .bg {

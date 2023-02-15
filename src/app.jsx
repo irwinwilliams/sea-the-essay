@@ -25,7 +25,7 @@ export default function Home() {
   return (
     <Router>
       <Seo />
-      <main role="main" className="wrapper">
+      <main role="main" className="front-matter">
         <div className="content">
           {/* Router specifies which component to insert here as the main content */}
           <PageRouter />
@@ -36,7 +36,9 @@ export default function Home() {
         <div className="links">
           <Link href="/">Home</Link>
           <span className="divider">|</span>
-          <Link href="/about">About</Link>
+          <Link href="/start">Start</Link>
+          <span className="divider">|</span>
+          <Link href="/essay">Essays</Link>
         </div>
       </footer>
     </Router>
