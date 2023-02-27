@@ -352,6 +352,11 @@ h2 {
   box-shadow: rgba(20, 70, 32, .2) 0 1px 0 inset;
 }
 
+.essayMain, .chatbot-container
+{
+  display:flex;
+}
+
 .essay-content span
 {
   margin:20px;
