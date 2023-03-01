@@ -18,9 +18,15 @@ const openai = new OpenAIApi(configuration);
 export default function Essay() {
   const [response, setResponse] = useState(null);
   const [working, setWorking] = useState(false);
-  const [activity, setActivity] = React.useState("Get Feedback.");
-  const [essayTopic, setEssayTopic] = React.useState("");
-  const [essayText, setEssayText] = React.useState(``);
+  const [activity, setActivity] = React.useState("Submit!");
+  const [essayTopic, setEssayTopic] = React.useState("The Importance of Trees");
+  const [essayText, setEssayText] = React.useState(`Animals are cool. I like animals because they are cool. Dogs are my favorite animal because they are cool. Dogs can do tricks and stuff.
+
+Cats are okay too. They are cute and soft. They can climb trees and catch mice.
+
+Fish are also cool. You can have a fish tank and watch the fish swim around. They are also pretty to look at.
+
+In conclusion, animals are cool and I like them. Dogs, cats, and fish are my favorite animals because they are cool.`);
   const [typingTimeout, setTypingTimeout] = useState(null);
   const [gradingResult, setGradingResult] = React.useState("");
   const [promptGuide, setPromptGuide] = React.useState("");
@@ -45,7 +51,12 @@ export default function Essay() {
       var result = response.data.choices[0].text;
       
       result = result.replace("Response:", "");
-    
+      /*result = result.replace("'", "\"");
+      result = result.replace("“", "\"");
+      result = result.replace("”", "\"");
+       
+      
+      result = JSON.parse(result);*/
       const pattern = /Grade:\s*(\d+\/\d+)\nComments:\s*(.+)\nImprovements:\s*(.+)/s;
 
       const matches = pattern.exec(result);
@@ -53,15 +64,12 @@ export default function Essay() {
       const grade = matches[1];
       const comments = matches[2].trim();
       const improvements = matches[3].trim();
-    
-      var gptResponse = {
-        Grade: grade,
-        Comments: comments,
-        Improvements: improvements,
-        Result: result        
-      };
 
-      return gptResponse;
+      result.Grade = grade;
+      result.Comments = comments;
+      result.Improvements = improvements;
+      result.Result = result;
+      return result;
   }
   
   async function gradeSubmission() {
@@ -81,29 +89,64 @@ export default function Essay() {
           var result = await doPrompt(guides[i].Guide);
           console.log(result);
           setResponse(result);
-    
+
+          // Add chatbot messages based on grading results
+          /*if (result.Score) {
+            messages.push({
+              text: `Your essay has a ${guides[i].Area} score of ${result.Score} out of 10.`,
+              avatar: "https://img.icons8.com/fluency/48/null/writer-female.png",
+            });
+          }*/
+          
           if (result.AchievementLevel) {
             messages.push({
               text: `Your essay achieved a level of ${result.AchievementLevel}.`,
               avatar: "https://img.icons8.com/fluency/48/null/writer-female.png",
             });
           }
-          messages.push({
+          if (guides[i].Area === "Content") {
+            messages.push({
               area: guides[i].Area,
-              text: result.Comments,
+              text: result.Content,
               avatar: "https://img.icons8.com/fluency/48/null/writer-female.png",
             });
+          }
+          if (guides[i].Area === "Organization") {
+            messages.push({
+              area: guides[i].Area,
+              text: `Your essay scored ${result.Result} for organization.`,
+              avatar: "https://img.icons8.com/fluency/48/null/writer-female.png",
+            });
+          }
+          if (guides[i].Area === "Language") {
+            messages.push({
+              text: `Your essay scored ${result.Result} for language.`,
+              avatar: "https://img.icons8.com/fluency/48/null/writer-female.png",
+            });
+          }
+          if (guides[i].Area === "Grammar") {
+            messages.push({
+              text: `Your essay scored ${result.Result} for grammar.`,
+              avatar: "https://img.icons8.com/fluency/48/null/writer-female.png",
+            });
+          }
+          
+          setChatbotMessages(messages);
           
           if (result.Improvements)
             {
-          messages.push({
-              area: guides[i].Area,
-              text: result.Improvements,
-              avatar: "https://img.icons8.com/fluency/48/null/writer-female.png",
-            });
+          addChatbotMessage(`Here are some suggestions to improve your essay:`);
+          result.Improvements.forEach((suggestion) => {
+            addChatbotMessage(suggestion);
+          });
             }
-          
-          setChatbotMessages(messages);
+          if (result.GrammarErrors)
+            {
+          addChatbotMessage(`Here are the grammar errors in your essay:`);
+          result.GrammarErrors.forEach((error) => {
+            addChatbotMessage(`Error: ${error.Error}, Explanation: ${error.Explanation}, Correction: ${error.Correction}`);
+          });
+            }
           
         }
       return result;
@@ -120,6 +163,42 @@ export default function Essay() {
   ]);
 }
   
+  function renderTable() {
+    console.log(response);
+    return (
+      <div>
+        <h3>Level</h3>
+        <p>{response.AchievementLevel}</p>
+        <table>
+          <thead>
+            <tr>
+              <th>Criteria</th>
+              <th>Score</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Content</td>
+              <td>{response.Content}</td>
+            </tr>
+            <tr>
+              <td>Language</td>
+              <td>{response.Language}</td>
+            </tr>
+            <tr>
+              <td>Organization</td>
+              <td>{response.Organization}</td>
+            </tr>
+            <tr>
+              <td>Grammar</td>
+              <td>{response.Grammar}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    );
+  }
+
   const handleTyping = (e) => {
     setEssayText(e.target.value);
     if (typingTimeout) {
@@ -146,7 +225,7 @@ export default function Essay() {
   } else {
     setGradingResult(result);
   }
-  setActivity("Get more feedback!");
+  setActivity("Submit!");
 };
   
   
@@ -160,13 +239,13 @@ export default function Essay() {
         <span><label>Essay Topic: </label><input value={essayTopic}
           onChange={(e) => setEssayTopic(e.target.value)} /></span>
         <textarea
-          rows="15"
+          rows="25"
           cols="70"
           onChange={(e) => setEssayText(e.target.value)}
           value={essayText}
           ></textarea></div>
         {error ? (
-          <textarea rows="15" cols="25" value={error} readOnly />
+          <textarea rows="25" cols="25" value={error} readOnly />
         ) : response ? (
           <div className="wrapResult">
             <div className="chatbot-container">

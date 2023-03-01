@@ -383,3 +383,9 @@ h2 {
     border: solid thin #CDA340;
   background-color:#F1F0EE;
 }
+
+.title
+{
+  padding:0px;
+  margin:0px;
+}

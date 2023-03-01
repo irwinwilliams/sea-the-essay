@@ -24,3 +24,9 @@
 .content {
   margin-left: 10px;
 }
+
+
+.text .msg
+{
+  white-space: pre-line
+}

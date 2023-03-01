@@ -19,10 +19,9 @@ This means you teach 10- or 11- year old children.
 The grade should have specific values for Content
 Please provide a score out of [10] the criteria.
 Please provide suggestions for improvements that the student can make to their essay to achieve a better score.
-Your response should be in this format:
-Grade:<grade>
-Comments:<comments>
-Improvements:<improvements>
+Format response in Proper JSON Format only, where all properties are double-quoted with this quotation mark, ". 
+Use single-quotes around strings. 
+Include an property called "Improvements", which will be an array of suggestions for improvement. 
 
 Essay:
   
@@ -41,10 +40,9 @@ This means you teach 10- or 11- year old children.
 The grade should have specific values for Content
 Please provide a score out of [10] the criteria.
 Please provide suggestions for improvements that the student can make to their essay to achieve a better score.
-Your response should be in this format:
-Grade:<grade>
-Comments:<comments>
-Improvements:<improvements>
+Format response in Proper JSON Format only, where all properties are double-quoted with this quotation mark, ". 
+Use single-quotes around strings. 
+Include an property called "Improvements", which will be an array of suggestions for improvement. 
 
 Essay:
   
@@ -64,10 +62,9 @@ This means you teach 10- or 11- year old children.
 The grade should have specific values for Content
 Please provide a score out of [10] the criteria.
 Please provide suggestions for improvements that the student can make to their essay to achieve a better score.
-Your response should be in this format:
-Grade:<grade>
-Comments:<comments>
-Improvements:<improvements>
+Format response in Proper JSON Format only, where all properties are double-quoted with this quotation mark, ". 
+Use single-quotes around strings. 
+Include an property called "Improvements", which will be an array of suggestions for improvement. 
 
 Essay:
   
@@ -88,10 +85,9 @@ This means you teach 10- or 11- year old children.
 The grade should have specific values for Content
 Please provide a score out of [10] the criteria.
 Please provide suggestions for improvements that the student can make to their essay to achieve a better score.
-Your response should be in this format:
-Grade:<grade>
-Comments:<comments>
-Improvements:<improvements>
+Format response in Proper JSON Format only, where all properties are double-quoted with this quotation mark, ". 
+Use single-quotes around strings. 
+Include an property called "Improvements", which will be an array of suggestions for improvement. 
 
 Essay:
   
