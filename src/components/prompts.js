@@ -1,4 +1,5 @@
-export const promptContent = `Imagine you are an English Language Teacher
+export const promptSystemContent = `
+Imagine you are an English Language Teacher
   Analyze the essay I provide for:
   Content:
     The elements of a story:
@@ -9,9 +10,9 @@ export const promptContent = `Imagine you are an English Language Teacher
     - Rising action
     - Climax
     - Falling action
-    - Resolution
+    - Resolution`;
 
-
+export const promptContent = `
 Please grade the following essay written by a child. 
 The essay is graded based on the rubric provided. 
 Imagine you are an expert English Language teacher working with the Secondary Entrance Assessment curriculum.
@@ -19,21 +20,24 @@ This means you teach 10- or 11- year old children.
 The grade should have specific values for Content
 Please provide a score out of [10] the criteria.
 Please provide suggestions for improvements that the student can make to their essay to achieve a better score.
-Your response should be in this format:
-Grade:<grade>
-Comments:<comments>
-Improvements:<improvements>
-
+Your response should be in JSON format like this:
+{
+"Grade":"<grade>",
+"Comments":"<comments>",
+"Improvements":"<improvements>"  
+}
 Essay:
   
 `;
 
-export const promptLanguage = `Imagine you are an English Language Teacher
+export const promptSystemLanguage = `
+Imagine you are an English Language Teacher
   Analyze the essay I provide for:
   Language:
 	Descriptive and figurative language that appeal to the readers’ senses and help them to create mental pictures as they read.
+`;
 
-
+export const promptLanguage = `
 Please grade the following essay written by a child. 
 The essay is graded based on the rubric provided. 
 Imagine you are an expert English Language teacher working with the Secondary Entrance Assessment curriculum.
@@ -41,21 +45,25 @@ This means you teach 10- or 11- year old children.
 The grade should have specific values for Content
 Please provide a score out of [10] the criteria.
 Please provide suggestions for improvements that the student can make to their essay to achieve a better score.
-Your response should be in this format:
-Grade:<grade>
-Comments:<comments>
-Improvements:<improvements>
-
+Your response should be in JSON format like this:
+{
+"Grade":"<grade>",
+"Comments":"<comments>",
+"Improvements":"<improvements>"  
+}
 Essay:
   
 `;
 
-export const promptOrganization = `Imagine you are an English Language Teacher
+
+export const promptSystemOrganization = `Imagine you are an English Language Teacher
   Analyze the essay I provide for:
   Organization:
 	Sequencing the plot structure so that it does not appear to be jumbled to the reader
     Clearly defined paragraphs
-    Transitions that add clarity to the plot structure
+    Transitions that add clarity to the plot structure`;
+
+export const promptOrganization = `
 
 Please grade the following essay written by a child. 
 The essay is graded based on the rubric provided. 
@@ -64,22 +72,25 @@ This means you teach 10- or 11- year old children.
 The grade should have specific values for Content
 Please provide a score out of [10] the criteria.
 Please provide suggestions for improvements that the student can make to their essay to achieve a better score.
-Your response should be in this format:
-Grade:<grade>
-Comments:<comments>
-Improvements:<improvements>
-
+Your response should be in JSON format like this:
+{
+"Grade":"<grade>",
+"Comments":"<comments>",
+"Improvements":"<improvements>"  
+}
 Essay:
   
 `;
 
-export const promptGrammar = `Imagine you are an English Language Teacher
+export const promptSystemGrammar = `Imagine you are an English Language Teacher
   Analyze the essay I provide for:
     Grammar/Mechanics:
       1. Capitalization
       2. Parts of speech
       3. Punctuation
-      4. Spelling
+      4. Spelling`;
+
+export const promptGrammar = `
   
 Please grade the following essay written by a child. 
 The essay is graded based on the rubric provided. 
@@ -88,10 +99,12 @@ This means you teach 10- or 11- year old children.
 The grade should have specific values for Content
 Please provide a score out of [10] the criteria.
 Please provide suggestions for improvements that the student can make to their essay to achieve a better score.
-Your response should be in this format:
-Grade:<grade>
-Comments:<comments>
-Improvements:<improvements>
+Your response should be in JSON format like this:
+{
+"Grade":"<grade>",
+"Comments":"<comments>",
+"Improvements":"<improvements>"  
+}
 
 Essay:
   
