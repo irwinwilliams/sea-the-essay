@@ -389,3 +389,8 @@ h2 {
   padding:0px;
   margin:0px;
 }
+
+#btnUploadEssayImg
+{
+  display:none;
+}
