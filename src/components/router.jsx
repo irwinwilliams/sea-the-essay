@@ -15,7 +15,7 @@ import Essay from "../pages/essay";
 
 export default () => (
     <Switch>
-      <Route path="/" component={Home} />
+      <Route path="/" component={Start} />
       <Route path="/about" component={About} />
       <Route path="/start" component={Start} />
       <Route path="/essay" component={Essay} />

@@ -1,0 +1,21 @@
+.config-button-container {
+  position: fixed;
+  top: 0;
+  right: 0;
+}
+
+.config-button {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  outline: none;
+}
+
+.api-key-config {
+  position: fixed;
+  top: 2rem;
+  right: 2rem;
+  padding: 1rem;
+  background-color: white;
+  border: 1px

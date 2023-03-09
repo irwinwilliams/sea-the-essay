@@ -37,7 +37,7 @@ export default function Start() {
       <div className="right-column">
         <div className="upper-right-section">
           <h3>TRY AS OFTEN AS YOU LIKE</h3>
-          <button>GET STARTED</button>
+          <button id="btn-get-started"><Link href="/essay">GET STARTED</Link></button>
         </div>
         <div className="lower-right-section"></div>
       </div>
